@@ -1,17 +1,17 @@
-import { useEffect } from 'react';
 import { ctx } from './context';
-import { useInitialData } from './useInitialData';
+import { useTodos } from './useTodos';
+import { Header } from './components/Header';
+import { Todos } from './components/Todos';
 
 function App() {
 
-  const data = useInitialData();
-
-  useEffect(() => console.log(data), [data]);
+  const { todos } = useTodos();
 
   return (
     <div className="App">
-      <ctx.Provider value={data}>
-        <div></div>
+      <ctx.Provider value={todos}>
+        <Header />
+        <Todos />
       </ctx.Provider>
     </div>
   );
