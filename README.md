@@ -97,4 +97,8 @@ export const Todos = () => {
 };
 ```
 
+💭 Final thoughts:
+
+You can think of it in terms of a "*useState global provider*" which allowes you to use a useState (or more) down the component tree.
+
 You are now good to go! Bye 👋
