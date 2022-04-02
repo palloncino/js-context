@@ -1,9 +1,8 @@
-import { useContext, useEffect } from "react";
-import { ctx } from "../context";
+import { useContext } from "react";
+import ctx from "../context";
 
 export const Todos = () => {
   const { todos, setTodoTitle } = useContext(ctx);
-  useEffect(() => console.log(1.3, { todos }), [todos]);
   
   return (
     <div>

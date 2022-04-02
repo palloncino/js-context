@@ -11,24 +11,23 @@ yarn create react-app js-context
 ```javascript
 import { createContext } from "react";
 
-export const ctx = createContext();
+export default createContext();
 ```
 
 3) Use the Provider and attribute the value from a custom hook
 
 ```javascript
-import { ctx } from './context';
-import { useTodos } from './useTodos';
-import { Header } from './components/Header';
-import { Todos } from './components/Todos';
+import ctx from "./context";
+import { useTodos } from "./useTodos";
+import { Header } from "./components/Header";
+import { Todos } from "./components/Todos";
 
 function App() {
-
   const { todos, setTodoTitle } = useTodos();
 
   return (
     <div className="App">
-      <ctx.Provider value={{todos, setTodoTitle}}>
+      <ctx.Provider value={{ todos, setTodoTitle }}>
         <Header />
         <Todos />
       </ctx.Provider>
@@ -73,8 +72,8 @@ export const useTodos = () => {
 5) useContext API in all its greatness
 
 ```javascript
-import { useContext, useEffect } from "react";
-import { ctx } from "../context";
+import { useContext } from "react";
+import ctx from "../context";
 
 export const Todos = () => {
   const { todos, setTodoTitle } = useContext(ctx);
@@ -96,7 +95,6 @@ export const Todos = () => {
     </div>
   );
 };
-
 ```
 
 You are now good to go! Bye 👋
