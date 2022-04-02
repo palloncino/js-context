@@ -9,7 +9,7 @@ export const useTodos = () => {
 
   function setTodoTitle(id, newTitle) {
     // [{id, title}, ...] 
-    const newTodos = todos.map(todo => todo.id === id ? todo.title = newTitle : null);
+    const newTodos = todos.map(todo => todo.id === id ? {...todo, title: newTitle } : todo);
     setTodos(newTodos);
   }
 

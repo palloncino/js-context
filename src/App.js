@@ -5,11 +5,11 @@ import { Todos } from './components/Todos';
 
 function App() {
 
-  const { todos } = useTodos();
+  const { todos, setTodoTitle } = useTodos();
 
   return (
     <div className="App">
-      <ctx.Provider value={todos}>
+      <ctx.Provider value={{todos, setTodoTitle}}>
         <Header />
         <Todos />
       </ctx.Provider>
