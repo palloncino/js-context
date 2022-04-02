@@ -11,7 +11,7 @@ yarn create react-app js-context
 ```javascript
 import { createContext } from "react";
 
-export const ctx = createContext([{}, () => {}])
+export const ctx = createContext();
 ```
 
 3) Use the Provider and attribute the value from a custom hook
